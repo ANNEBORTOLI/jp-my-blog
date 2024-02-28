@@ -1,9 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :articles
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "welcome/index"
+  # Admin routes
+  namespace :administrate do
+    resources :articles
+  end
+
+  get "/inicio", to: "welcome#index"
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "welcome#index"
 end

@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get "welcome/index"
   # Admin routes
   namespace :administrate do
-    resources :articles
+    resources :articles do
+      member do
+        delete "destroy_cover_image"
+      end
+    end
   end
 
   get "/inicio", to: "welcome#index"

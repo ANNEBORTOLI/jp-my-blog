@@ -38,5 +38,8 @@ module RubyonrailsclubBlog
 
     # I18n
     config.i18n.default_locale = "pt-BR"
+
+    # ActiveStorage
+    config.active_storage.variant_processor = :mini_magick
   end
 end

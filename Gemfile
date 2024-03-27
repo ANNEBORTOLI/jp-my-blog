@@ -57,6 +57,7 @@ group :development, :test do
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]
   gem "faker"
   gem "tty-spinner"
+  gem "dotenv"
 end
 
 group :development do

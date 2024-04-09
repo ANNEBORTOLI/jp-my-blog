@@ -1,22 +1,29 @@
 # frozen_string_literal: true
 
 namespace :dev do
+  desc "Reset database"
+  task reset: :environment do
+    system("rails db:drop db:create db:migrate db:seed")
+    system("rails dev:add_articles")
+  end
+
   desc "Add articles to the database"
   task add_articles: :environment do
     show_spinner("Adding articles to the database") { add_articles }
   end
 
-  # Para adicionar uma nova task e continuar usando o show_spinner
-  # desc "New task description..."
-  # task do_something: :environment do
-  #   show_spinner("Bla bla bla") { new_method }
-  # end
-
   def add_articles
     50.times do
-      Article.create(
+      article = Article.create(
         title: Faker::Lorem.sentence.delete("."),
         body: Faker::Lorem.paragraph(sentence_count: rand(100..200)),
+      )
+
+      image_id = rand(1..3)
+
+      article.cover_image.attach(
+        io: File.open(Rails.root.join("lib/tasks/images/article_#{image_id}.jpg")),
+        filename: "article_#{image_id}.jpg",
       )
     end
   end

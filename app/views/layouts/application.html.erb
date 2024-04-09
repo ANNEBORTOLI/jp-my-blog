@@ -25,12 +25,8 @@
 
   <body>
     <%= render partial: "layouts/shared/application/header" %>
-    <%= render partial: "layouts/shared/application/main_banner" %>
-    <%= render partial: "layouts/shared/application/posts" %>
-    <%= render partial: "layouts/shared/application/categories" %>
-    <%= render partial: "layouts/shared/application/footer" %>
-
     <%= yield %>
+    <%= render partial: "layouts/shared/application/footer" %>
 
     <%= javascript_include_tag "menu", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "posts-grid", "data-turbo-track": "reload" %>

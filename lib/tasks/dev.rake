@@ -4,7 +4,13 @@ namespace :dev do
   desc "Reset database"
   task reset: :environment do
     system("rails db:drop db:create db:migrate db:seed")
+    system("rails dev:add_categories")
     system("rails dev:add_articles")
+  end
+
+  desc "Add categories to the database"
+  task add_categories: :environment do
+    show_spinner("Adding categories to the database") { add_categories }
   end
 
   desc "Add articles to the database"
@@ -12,11 +18,18 @@ namespace :dev do
     show_spinner("Adding articles to the database") { add_articles }
   end
 
+  def add_categories
+    ["Ruby", "Rails", "WSL", "Linux"].each do |name|
+      Category.create!(name: name)
+    end
+  end
+
   def add_articles
     50.times do
       article = Article.create(
         title: Faker::Lorem.sentence.delete("."),
         body: Faker::Lorem.paragraph(sentence_count: rand(100..200)),
+        category: Category.all.sample,
       )
 
       image_id = rand(1..3)

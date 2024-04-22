@@ -58,7 +58,7 @@ group :development, :test do
   gem "faker"
   gem "tty-spinner"
   gem "dotenv"
-  gem 'railroady'
+  gem "railroady"
 end
 
 group :development do

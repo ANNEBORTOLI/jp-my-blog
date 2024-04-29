@@ -19,33 +19,19 @@
   </div>
   <div class="row">
     <nav class="menu">
-      <%= link_to administrate_articles_path, class: "active" do %>
+      <%= link_to administrate_articles_path, class: active_link?("articles") do %>
         <div class="icon">
           <%= image_tag "icons/white/posts.svg", alt: "posts" %>
         </div>
         <label for="#">Artigos</label>
       <% end %>
 
-      <a href="#">
+      <%= link_to administrate_categories_path, class:active_link?("categories") do %>
         <div class="icon">
           <%= image_tag 'icons/white/categories.svg', alt: "categories" %>
         </div>
         <label for="#">Categorias</label>
-      </a>
-
-      <a href="#">
-        <div class="icon">
-          <%= image_tag 'icons/white/courses.svg' %>
-        </div>
-        <label for="#">Cursos</label>
-      </a>
-
-      <a href="#">
-        <div class="icon">
-          <%= image_tag 'icons/white/config.svg' %>
-        </div>
-        <label for="#">Configurações</label>
-      </a>
+      <% end %>
     </nav>
   </div>
 </aside>

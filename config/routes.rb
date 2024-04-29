@@ -14,6 +14,9 @@ Rails.application.routes.draw do
         delete "destroy_cover_image"
       end
     end
+
+    resources :categories do
+    end
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

@@ -25,10 +25,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="<%= "page-post-detail" if controller_name == "articles" %>">
     <%= render partial: "layouts/shared/application/header" %>
     <%= yield %>
     <%= render partial: "layouts/shared/application/footer" %>
+
 
     <%= javascript_include_tag "menu", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "posts-grid", "data-turbo-track": "reload" %>

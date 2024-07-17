@@ -25,8 +25,30 @@ namespace :dev do
   end
 
   def add_categories
-    ["Ruby", "Rails", "WSL", "Linux"].each do |name|
-      Category.create!(name: name)
+    [
+      "Ruby",
+      "Rails",
+      "WSL",
+      "Linux",
+      "Design",
+      "Backend",
+      "Frontend",
+      "DevOps",
+      "Cloud",
+      "Segurança",
+      "Testes",
+    ].each do |name|
+      category = Category.create!(
+        name: name,
+        description: Faker::Lorem.paragraph(sentence_count: rand(2..4)),
+      )
+
+      image_id = rand(1..8)
+
+      category.cover_image.attach(
+        io: File.open(Rails.root.join("lib/tasks/images/category#{image_id}.jpg")),
+        filename: "category_#{image_id}.jpg",
+      )
     end
   end
 
@@ -58,6 +80,7 @@ namespace :dev do
         body: Faker::Lorem.paragraph(sentence_count: rand(100..200)),
         category: Category.all.sample,
         author: Author.all.sample,
+        created_at: Faker::Date.between(from: 1.year.ago, to: Date.current),
       )
 
       image_id = rand(1..5)

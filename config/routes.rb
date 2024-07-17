@@ -13,16 +13,20 @@ Rails.application.routes.draw do
 
     resources :articles do
       member do
-        delete "destroy_cover_image"
+        delete :destroy_cover_image
       end
     end
 
     resources :authors do
       member do
-        delete "destroy_avatar_image"
+        delete :destroy_avatar_image
       end
     end
-    resources :categories
+    resources :categories do
+      member do
+        delete :destroy_cover_image
+      end
+    end
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

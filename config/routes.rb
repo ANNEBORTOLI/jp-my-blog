@@ -17,8 +17,8 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :categories do
-    end
+    resources :authors
+    resources :categories
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

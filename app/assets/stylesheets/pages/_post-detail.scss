@@ -577,7 +577,10 @@
   }
 
   .post-detail-comment-item .actions-row .like,
-  .post-detail-comment-item .actions-row .deslike {
+  .post-detail-comment-item .actions-row .dislike {
+    border: none;
+    background: #fff;
+    cursor: pointer;
     color: $black;
     font-size: 0.875rem;
     font-weight: $font-weight-bold;
@@ -596,10 +599,10 @@
     color: $color-secondary;
   }
 
-  .post-detail-comment-item .actions-row .deslike {
+  .post-detail-comment-item .actions-row .dislike {
     background-image: url(asset-path("icons/black/thumbs-down.svg"));
   }
-  .post-detail-comment-item .actions-row .deslike.active {
+  .post-detail-comment-item .actions-row .dislike.active {
     background-image: url(asset-path("icons/red-dark/thumbs-down.svg"));
     color: $color-secondary;
   }

@@ -96,6 +96,20 @@
     transition: width $animation-transition, height $animation-transition;
     position: relative;
   }
+
+  .logo-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 16px; // Adjust padding as needed to fit the logo
+    box-sizing: border-box;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
 }
 
 body.menu-closed .admin-nav {

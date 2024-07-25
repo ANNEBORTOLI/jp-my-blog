@@ -1,14 +1,29 @@
 ////////////////////// Colors
+// $red: #cc0000;
+// $white: #f5f5f5;
+// $black: #2f2f2f;
+// $gray-light: #efefef;
+// $gray: #898989;
+// $gray-dark: darken($gray, 20%);
+// $red-dark: #930f17;
+
+// $color-primary: $red;
+// $color-primary-contrast: #fff;
+// $color-secondary: $red-dark;
+// $color-secondary-contrast: #fff;
+
+////// MY COLOUR PALETTE
 $red: #cc0000;
 $white: #f5f5f5;
-$black: #2f2f2f;
+$black: #0d3b66;
 $gray-light: #efefef;
 $gray: #898989;
 $gray-dark: darken($gray, 20%);
 $red-dark: #930f17;
-$color-primary: $red;
+
+$color-primary: #489fb5;
 $color-primary-contrast: #fff;
-$color-secondary: $red-dark;
+$color-secondary: #16697a;
 $color-secondary-contrast: #fff;
 
 ////////////////////// Animation

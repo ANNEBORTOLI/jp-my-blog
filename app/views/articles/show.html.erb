@@ -12,17 +12,20 @@
       </div>
     </div>
     <div class="secondary-content">
-      <a href="#" class="post-detail-image-ad">
-        <%= image_tag 'ad/image-ad.jpg' %>
-      </a>
+      <%# <a href="#" class="post-detail-image-ad"> %>
+        <%#= image_tag 'ad/image-ad.jpg' %>
+      <%# </a> %>
       <div class="share-post">
-        <div class="share-post-title">Compartilhar post</div>
+        <div class="share-post-title">Compartilhar</div>
         <div class="socials">
-          <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{article_url(@article)}" do %>
-            <%= image_tag 'icons/red/facebook.svg' %>
+          <%= link_to "https://www.linkedin.com/shareArticle?mini=true&url=#{@article.title}&url=#{article_url(@article)}" do %>
+            <%= image_tag 'icons/red/linkedin.svg' %>
           <% end%>
           <%= link_to "https://twitter.com/intent/tweet?text=#{@article.title}&url=#{article_url(@article)}" do %>
             <%= image_tag 'icons/red/twitter.svg' %>
+          <% end%>
+          <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{article_url(@article)}" do %>
+            <%= image_tag 'icons/red/facebook.svg' %>
           <% end%>
         </div>
       </div>
@@ -48,7 +51,7 @@
       </div>
       <div class="comments text-container">
         <div class="label">Comentários</div>
-        <div class="description">15</div>
+        <div class="description"><%= @article.comments.count %></div>
       </div>
     </div>
   </div>
@@ -58,7 +61,7 @@
   <div class="container">
     <div class="primary-content">
       <div class="post-detail-content">
-        <%= @article.body %>
+        <%= markdown(@article.body) %>
       </div>
       <div class="post-detail-author-bio">
         <div class="image">
@@ -148,9 +151,9 @@
 
 
     <div class="secondary-content">
-      <a href="#" class="post-content-ad">
-        <%= image_tag 'ad/post-content-ad.jpg' %>
-      </a>
+      <%# <a href="#" class="post-content-ad"> %>
+        <%#= image_tag 'ad/post-content-ad.jpg' %>
+      <%# </a> %>
       <div class="post-detail-other-posts">
         <div class="other-posts-title">Outras publicações</div>
         <% @other_articles.each do |other_article| %>
@@ -160,9 +163,9 @@
           </a>
         <% end %>
       </div>
-      <a href="#" class="post-content-ad">
-        <%= image_tag 'ad/post-content-footer-ad.jpg' %>
-      </a>
+      <%# <a href="#" class="post-content-ad"> %>
+        <%#= image_tag 'ad/post-content-footer-ad.jpg' %>
+      <%# </a> %>
     </div>
   </div>
   </div>

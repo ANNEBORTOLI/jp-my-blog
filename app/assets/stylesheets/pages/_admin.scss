@@ -26,6 +26,7 @@ body.menu-closed {
     align-items: flex-start;
     flex-direction: column;
     overflow-y: auto;
+    padding: 30px;
   }
 
   .admin-title {
@@ -38,7 +39,7 @@ body.menu-closed {
     padding-bottom: 26px;
     font-size: 2.25rem;
     font-weight: #{$font-weight-bolder};
-    background-color: #fff;
+    // background-color: #fff;
 
     @include bp-medium() {
       padding: #{$admin-content-padding-mobile};

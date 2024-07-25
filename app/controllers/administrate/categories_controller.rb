@@ -25,7 +25,7 @@ module Administrate
     # POST /categories or /categories.json
     def create
       @category = Category.new(category_params)
-      @category.cover_image.attach(article_params[:cover_image])
+      @category.cover_image.attach(category_params[:cover_image])
 
       respond_to do |format|
         if @category.save

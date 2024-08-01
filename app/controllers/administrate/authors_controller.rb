@@ -101,6 +101,7 @@ module Administrate
         :twitter_profile_url,
         :linkedin_profile_url,
         :youtube_profile_url,
+        :github_profile_url,
         :avatar_image,
       )
     end

@@ -38,6 +38,12 @@
     </div>
     <div class="input-row">
       <div class="input-container">
+        <%= form.label :github_profile_url, class:"label" %>
+        <%= form.text_field :github_profile_url, disabled: (params[:action] == "show"), placeholder:"Digite aqui o nome do autor github", class:"input" %>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-container">
         <%= form.label :youtube_profile_url, class:"label" %>
         <%= form.text_field :youtube_profile_url, disabled: (params[:action] == "show"), placeholder:"Digite aqui o nome do autor youtube", class:"input" %>
       </div>

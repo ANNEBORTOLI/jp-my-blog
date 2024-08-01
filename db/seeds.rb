@@ -3,7 +3,6 @@
 # Create default admin users
 admins = {
   ENV["DEFAULT_EMAIL"] => "Administrador",
-  "test@test.com" => "Teste",
 }
 
 admins.each do |email, name|

@@ -6,9 +6,9 @@
         <div class="list-container">
           <ul>
             <li><%= link_to 'Início', root_path %></li>
-            <li><a href="#">Categorias</a></li>
-            <li><a href="#">Cursos</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><%= link_to 'Cursos', courses_path %></li>
+            <li><%= link_to 'Projetos', projects_path %></li>
+            <li><%= link_to 'Contato', contacts_path %></li>
           </ul>
         </div>
       </div>
@@ -17,12 +17,12 @@
         <div class="list-container">
           <ul>
             <% @footer_categories_1.each do |category| %>
-              <li><a href="#"><%= category.name %></a></li>
+              <li><%= link_to category.name, category_articles_path(category) %></li>
             <% end %>
           </ul>
           <ul>
             <% @footer_categories_2.each do |category| %>
-              <li><a href="#"><%= category.name %></a></li>
+              <li><%= link_to category.name, category_articles_path(category) %></li>
             <% end %>
           </ul>
         </div>
@@ -40,10 +40,17 @@
     </div>
     <div class="social-container">
       <div class="social">
-        <a href="#"><%= image_tag "icons/gray/facebook.svg", alt:"Facebook" %></a>
-        <a href="#"><%= image_tag "icons/gray/twitter.svg", alt:"Twitter" %></a>
-        <a href="#"><%= image_tag "icons/gray/instagram.svg", alt:"Instagram" %></a>
-        <a href="#"><%= image_tag "icons/gray/linkedin.svg", alt:"Linkedin" %></a>
+          <%= link_to "https://github.com/ANNEBORTOLI", target: "_blank" do %>
+            <%= image_tag "icons/gray/github.svg", alt: "Github" %>
+          <% end %>
+
+          <%= link_to "https://www.linkedin.com/in/anne-bortoli/", target: "_blank" do %>
+            <%= image_tag "icons/gray/linkedin.svg", alt: "Linkedin" %>
+          <% end %>
+
+          <%= link_to "mailto:annebortoli@gmail.com", target: "_blank" do %>
+            <%= image_tag "icons/gray/email.svg", alt: "Email" %>
+          <% end %>
       </div>
     </div>
     <div class="logo-container">

@@ -2,7 +2,7 @@
 
 # Create default admin users
 admins = {
-  "admin@admin.com" => "Administrador",
+  ENV["DEFAULT_EMAIL"] => "Administrador",
   "test@test.com" => "Teste",
 }
 
@@ -19,6 +19,6 @@ end
 
 # Create default user
 User.find_or_create_by(email: "user@user.com") do |user|
-  user.password = ENV["DEFAULT_PASSWORD"]
-  user.password_confirmation = ENV["DEFAULT_PASSWORD"]
+  user.password = 123456
+  user.password_confirmation = 123456
 end

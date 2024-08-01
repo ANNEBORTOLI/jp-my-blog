@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   devise_for :admins
   get "welcome/index"
 
+  get "contacts" => "contacts#index"
+  get "courses" => "courses#index"
+  get "projects" => "projects#index"
+
   resources :articles, only: [:show] do
     resources :comments do
       member do
@@ -12,6 +16,11 @@ Rails.application.routes.draw do
         post :dislike
       end
     end
+  end
+
+  # List articles based on the category
+  resources :categories, only: [] do
+    resources :articles, only: [:index]
   end
 
   # Admin routes

@@ -108,8 +108,8 @@ namespace :dev do
     30.times do
       User.create(
         email: Faker::Internet.email,
-        password: ENV["DEFAULT_PASSWORD"],
-        password_confirmation: ENV["DEFAULT_PASSWORD"],
+        password: 123456,
+        password_confirmation: 123456,
       )
     end
   end

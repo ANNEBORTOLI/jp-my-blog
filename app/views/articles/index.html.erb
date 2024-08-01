@@ -1,0 +1,25 @@
+<section class="section posts-grid-section">
+  <div class="container">
+    <div class="title-container with-item">
+      <h2 class="title">Artigos na Categoria <%= @category.name %></h2>
+    </div>
+    <div class="grid" id="postGridHome">
+      <% @articles.each do |article| %>
+        <%= link_to article_path(article), class: "item" do %>
+          <%= image_tag(cover_image_fallback(article), class: "item-image", alt:"article image") %>
+          <div class="item-row">
+            <div class="item-category"><%= article.category.name %></div>
+            <div class="item-comments"><%= article.comments.count %></div>
+          </div>
+          <div class="item-row">
+            <div class="item-title"><%= article.title %></div>
+          </div>
+          <div class="item-row">
+            <div class="item-author"><%= article.author.name %></div>
+            <div class="item-date"><%= article.created_at.strftime("%d de %b") %></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+<section class="section main-banner-section">
+  <div class="container">
+    <div class="text-container">
+      <h1 class="title">Anne Bortoli</h1>
+      <h4 class="subtitle">Gosto de olhar para programação como um jogo, com fases e desafios de diferentes níveis de complexidade. A diferença é que, nesse jogo, nunca se perde, pois é errando que se aprende. Siga-me nas minhas redes sociais! </h4>
+      <br>
+      <div class="social-container">
+        <div class="social" style="text-align: center; display: flex; justify-content: center; gap: 20px;">
+          <%= link_to "https://github.com/ANNEBORTOLI", target: "_blank" do %>
+            <%= image_tag "icons/gray/github.svg", alt: "Github" %>
+          <% end %>
+
+          <%= link_to "https://www.linkedin.com/in/anne-bortoli/", target: "_blank" do %>
+            <%= image_tag "icons/gray/linkedin.svg", alt: "Linkedin" %>
+          <% end %>
+
+          <%= link_to "mailto:annebortoli@gmail.com", target: "_blank" do %>
+            <%= image_tag "icons/gray/email.svg", alt: "Email" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-container">
+      <%= image_tag 'author/anne.jpg', alt:"Desenvolvedora" %>
+    </div>
+  </div>
+</section>

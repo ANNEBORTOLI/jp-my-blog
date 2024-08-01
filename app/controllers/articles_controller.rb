@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
+  def index
+    @category = Category.find(params[:category_id])
+    @articles = @category.articles
+  end
+
   def show
     @article = Article.includes(:category, :author, comments: :user).friendly.find(params[:id])
     @other_articles = Article.all.sample(3)

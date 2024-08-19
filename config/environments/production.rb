@@ -92,4 +92,24 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Configure the mailer to use SMTP
+  config.action_mailer.delivery_method = :smtp
+  # Set default URL options for Devise mailer
+  config.action_mailer.default_url_options = { host: "annebortoli-blog.fly.dev", protocol: "https" }
+
+  # SMTP settings for Gmail (or any other SMTP service you're using)
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "annebortoli-blog.fly.dev",
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"],
+    authentication: "plain",
+    enable_starttls_auto: true,
+  }
+
+  # Ensure emails are actually sent in production
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 end
